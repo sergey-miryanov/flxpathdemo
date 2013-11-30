@@ -26,8 +26,10 @@ class MenuState extends FlxState
 		FlxG.mouse.show();
 		#end
 
+    FlxG.log.redirectTraces = false;
+
     var x = new FlxSprite(30, 30);
-    x.makeGraphic(50, 50, 0xff0000ff);
+    x.loadGraphic("assets/tank.png");
     add(x);
 
     var path = FlxPath.start(x, [
@@ -39,12 +41,30 @@ class MenuState extends FlxState
 
 
     var y = new FlxSprite(120, 20);
-    y.makeGraphic(50, 50, 0xff00ff55);
+    y.loadGraphic("assets/tank.png");
     add(y);
 
     var path = FlxPath.start(y, [new FlxPoint(120, 20),
       new FlxPoint(140, 40)],
       40, FlxPath.LOOP_FORWARD, true);
+
+    var z = new FlxSprite(220, 120);
+    z.loadGraphic("assets/tank.png");
+    add(z);
+
+    var path = FlxPath.start(z, [new FlxPoint(220, 120),
+      new FlxPoint(260, 160),
+      new FlxPoint(360, 160),
+      new FlxPoint(390, 130),
+      new FlxPoint(350, 130),
+      new FlxPoint(330, 150),
+      new FlxPoint(300, 150),
+      new FlxPoint(350, 100),
+      new FlxPoint(300, 80),
+      new FlxPoint(280, 120),
+      ],
+      20, FlxPath.LOOP_FORWARD, true);
+
 
 		super.create();
 	}

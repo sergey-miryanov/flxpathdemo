@@ -29,13 +29,21 @@ class MenuState extends FlxState
     var x = new FlxSprite(30, 30);
     x.makeGraphic(50, 50, 0xff0000ff);
     add(x);
-		
 
     var path = FlxPath.start(x, [
       new FlxPoint(40, 40), new FlxPoint(60, 20),
       new FlxPoint(120, 20), new FlxPoint(140, 40),
       new FlxPoint(140, 80), new FlxPoint(120, 100),
       new FlxPoint(60, 100), new FlxPoint(40, 80),],
+      40, FlxPath.YOYO, true);
+
+
+    var y = new FlxSprite(120, 20);
+    y.makeGraphic(50, 50, 0xff00ff55);
+    add(y);
+
+    var path = FlxPath.start(y, [new FlxPoint(120, 20),
+      new FlxPoint(140, 40)],
       40, FlxPath.LOOP_FORWARD, true);
 
 		super.create();
